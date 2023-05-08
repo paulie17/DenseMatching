@@ -171,7 +171,7 @@ class FeatureExtraction(torch.nn.Module):
         # for resnet below
         resnet_feature_layers = ['conv1', 'bn1', 'relu', 'maxpool', 'layer1', 'layer2', 'layer3', 'layer4']
         if feature_extraction_cnn == 'resnet101':
-            self.model = models.resnet101(pretrained=True)
+            self.model = models.resnet101(weights='ResNet101_Weights.DEFAULT')
             if last_layer == '':
                 last_layer = 'layer3'
             resnet_module_list = [getattr(self.model, l) for l in resnet_feature_layers]

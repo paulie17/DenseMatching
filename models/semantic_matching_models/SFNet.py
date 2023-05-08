@@ -18,7 +18,7 @@ from utils_flow.flow_and_mapping_operations import unnormalize, convert_mapping_
 class FeatureExtraction(nn.Module):
     def __init__(self, train_features=False):
         super(FeatureExtraction, self).__init__()
-        model = models.resnet101(pretrained=True)
+        model = models.resnet101(weights='ResNet101_Weights.DEFAULT')
         resnet_feature_layers = ['conv1',
                                  'bn1',
                                  'relu',
